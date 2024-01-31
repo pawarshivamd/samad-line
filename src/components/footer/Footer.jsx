@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <div className="col-lg-3 col-md-6 col-sm-6 footer-left-body ">
             <div className="footer-icon-box">
-              <img src="asstes/img/logo/logo.png" alt="" />
+              <img src="../asstes/img/logo/logo.png" alt="logo" />
             </div>
             {/* <p className="gym-icon-size">
               2023 <i className="far fa-copyright" />

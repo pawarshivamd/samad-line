@@ -270,11 +270,11 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
                   style={{ cursor: 'pointer' }}
                 />
                 <label for="star4" className="star">
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
                   <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
                 </label>{' '}
               </p>
               <p>
@@ -288,11 +288,11 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
                   style={{ cursor: 'pointer' }}
                 />
                 <label for="star3" className="star">
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
                   <i className="fas fa-star" />
                   <i className="fas fa-star" />
                   <i className="fas fa-star " />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
                 </label>{' '}
               </p>
               <p>
@@ -306,11 +306,11 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
                   style={{ cursor: 'pointer' }}
                 />
                 <label for="star2" className="star">
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
                   <i className="fas fa-star" />
                   <i className="fas fa-star " />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
                 </label>{' '}
               </p>
               <p>
@@ -324,11 +324,11 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
                   style={{ cursor: 'pointer' }}
                 />
                 <label for="star1" className="star">
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
                   <i className="fas fa-star" />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
                 </label>{' '}
               </p>
             </div>

@@ -107,6 +107,19 @@ const Navbar = ({
               tabIndex="-1"
             >
               <ul className="navbar-nav ms-auto  nav-ul">
+                <li className="nav-item">
+                  <Link
+                    className="nav-link "
+                    to="/"
+                    onClick={() => {
+                      setSearchText('');
+                      closeMenu();
+                    }}
+                  >
+                    Home
+                  </Link>
+                </li>
+
                 <li className="nav-item dropdown position-static">
                   <Link
                     className="nav-link dropdown-toggle category-box"
@@ -197,6 +210,19 @@ const Navbar = ({
                     Contact
                   </Link>
                 </li>
+
+                <li className="nav-item">
+                  <Link
+                    className="nav-link "
+                    to="/about-us"
+                    onClick={() => {
+                      setSearchText('');
+                      closeMenu();
+                    }}
+                  >
+                    About
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -205,7 +231,7 @@ const Navbar = ({
       <div className="min-hed">
         <div className="container">
           <div className="head-section" style={{ margin: 'auto' }}>
-            <div className=" col-md-3  col-sm-0 " />
+            {/* <div className=" col-md-3  col-sm-0 " /> */}
             <div className="col-md-6 col-sm-6">
               <div action="" className="inputcontainer">
                 <input

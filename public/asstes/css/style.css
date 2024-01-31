@@ -1,4 +1,16 @@
 /* ============== Product grid detils Start ============= */
+
+:root {
+  --them-colour: #DEDEDE !important;
+  --black-gry: #3B3B3B;
+  --gray: #DEDEDE;
+  --black: #000000;
+  --white: #ffffff;
+  --light: #fdead3;
+  --primary: #945b13;
+  --btn-hover: #e79835;
+}
+
 .sidebar-produtespage {
   padding: 30px 20px;
 }
@@ -73,7 +85,7 @@
 }
 
 .product-grid-left-section .product-grid-left-box .left-box-main .Left-contain .no-colour {
-  color: #bdc4cd;
+  color: var(--black);
 }
 
 .product-grid-section-header {
@@ -230,7 +242,8 @@
 }
 
 .products-grid-body .box-card .head-stars .reviews {
-  background-color: var(--them-colour);
+  background-color: var(--black);
+  color: var(--them-colour);
   padding: 4px 5px;
   display: flex;
   align-items: center;
@@ -242,7 +255,7 @@
 }
 
 .products-grid-body .box-card .head-stars .reviews i {
-  color: #E9E9E9;
+  color: var(--them-colour);
   font-size: 11px;
 }
 
@@ -310,7 +323,7 @@
   font-size: 35px;
   font-weight: 600;
   text-align: center;
-  color: var(--them-colour);
+  color: var(--black);
   padding-top: 16px;
 }
 
@@ -1060,8 +1073,9 @@
 
 .my-whish-section .my-whish-contain .btn-mywish-body a .btn-mywhish {
   padding: 7px 7px;
-  border: 1px solid var(--them-colour);
-  background-color: var(--them-colour);
+  /* border: 1px solid var(--them-colour); */
+  background-color: var(--black);
+  color: var(--white) !important;
   font-size: 16px;
   font-weight: 400;
   color: #333030;
@@ -1070,6 +1084,14 @@
   transition: ease-out 0.4s;
   margin-bottom: 0px;
   cursor: pointer;
+}
+
+.my-whish-section .my-whish-contain .btn-mywish-body a .btn-mywhish:hover{
+
+  background-color: var(--them-colour);
+  color: var(---black) !important ;
+  border: 1px solid var(--black);
+
 }
 
 .my-whish-section .my-whish-contain .btn-mywish-body a .btn-mywhish span {
@@ -1378,7 +1400,7 @@
 }
 
 .cart-section .Delivery-fix-body .Delivery-at-contain .Delivery-at .Change {
-  color: var(--them-colour);
+  color: var(--black);
   font-weight: 600;
 }
 
@@ -1401,10 +1423,10 @@
   cursor: pointer;
 }
 
-/* .cart-section .Delivery-fix-body .place-btn p:hover {
+.cart-section .Delivery-fix-body .place-btn p:hover {
   color: var(--black);
   box-shadow: inset 400px 0 0 0 var(--them-colour);
-} */
+}
 
 /* =========== Cart section End =============== */
 /* ================ Delivery section Start ============= */
@@ -1938,7 +1960,7 @@
 }
 
 .profile-section .profile-left-body a {
-  color: rgb(147, 147, 147);
+  color: var(--black);
   font-weight: 500;
 }
 
@@ -2901,7 +2923,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue LT Pro';
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -2973,16 +2995,7 @@ p {
   line-height: 25px;
 }
 
-:root {
-  --them-colour: #F9DF23;
-  --black-gry: #3B3B3B;
-  --gray: #DEDEDE;
-  --black: #000000;
-  --white: #ffffff;
-  --light: #fdead3;
-  --primary: #945b13;
-  --btn-hover: #e79835;
-}
+
 
 input:focus {
   box-shadow: none;
@@ -3010,6 +3023,8 @@ select:focus {
 /* =========  start header section ================ */
 .nav-section {
   background-color: var(--black-gry);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.2)),
+                  url('../../../public/asstes/img/nav/1.png'); */
   min-height: 63px;
 }
 
@@ -3129,7 +3144,7 @@ select:focus {
 .min-hed .head-section {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .min-hed .login-btn-1 {
@@ -3208,6 +3223,13 @@ select:focus {
   justify-content: center;
   margin-right: 20px;
   cursor: pointer;
+}
+
+.min-hed .login-section a .login-btn:hover{
+
+  background-color: var(--black);
+  color: var(--them-colour);
+
 }
 
 
@@ -3928,6 +3950,9 @@ select:focus {
 footer {
   margin-top: auto;
   background-color: var(--black-gry) !important;
+  /* background-image: url('../../../public/asstes/img/footer/1.png'); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   padding: 30px 1px 0px 0px;
   display: flex;
   align-items: center;

@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
-import ProductListing from './ProductListing';
+// import ProductListing from './ProductListing';
 // import BrandListing from './BrandListing';
 // import Blogs from './Blogs';
 import Categories from './Categories';
 
-const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
+// const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
+const DashboardMain = ({ homeScreenData }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const [isTablet, setIsTablet] = useState(false);
@@ -79,9 +80,9 @@ const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
                     alt=""
                   />
                 </SwiperSlide>
-                <div className="hero-body">
+                {/* <div className="hero-body">
                   <img src="asstes/img/hero/text-bg.png" alt="" />
-                </div>
+                </div> */}
               </Swiper>
             </div>
           </div>
@@ -92,14 +93,14 @@ const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
         isMobile={isMobile}
         isTablet={isTablet}
       />
-      <ProductListing
+      {/* <ProductListing
         type="TRENDING NOW"
         products={homeScreenData?.trendingProducts}
         addtoCart={addtoCart}
         addToWishlist={addToWishlist}
         isMobile={isMobile}
         isTablet={isTablet}
-      />
+      /> */}
       {/* <div className="container ">
         <div className=" col-lg-12  col-md-12 col-sm-12 ">
           <div className="img-bg-box">
@@ -109,7 +110,7 @@ const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
       </div> */}
       <div className="container-xxl">
         <div className="offer-section">
-          <div className="offer-boday">
+          {/* <div className="offer-boday">
             <div className="row">
               <div className=" col-lg-6 col-md-6 col-sm-12 ">
                 <div className="offer-contain">
@@ -130,17 +131,17 @@ const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <ProductListing
+      {/* <ProductListing
         type="NEW ARRIVAL"
         products={homeScreenData?.newArrivals}
         addtoCart={addtoCart}
         addToWishlist={addToWishlist}
         isMobile={isMobile}
         isTablet={isTablet}
-      />
+      /> */}
       {/* <BrandListing
         brands={homeScreenData?.brands}
         isMobile={isMobile}
