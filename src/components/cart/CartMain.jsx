@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 // import useRazorpay from 'react-razorpay';
-import API from 'helpers/API';
-import EmptyCart from 'components/notFound/EmptyCart';
-import Notification from 'components/Notification/Notification';
-import CartItem from './CartItem';
+import API from "helpers/API";
+import EmptyCart from "components/notFound/EmptyCart";
+import Notification from "components/Notification/Notification";
+import CartItem from "./CartItem";
 
 function CartMain({
   cart,
@@ -25,7 +25,7 @@ function CartMain({
   const handlePayment = async (addressId) => {
     try {
       if (!addressId) {
-        Notification('info', 'Please Select An Address');
+        Notification("info", "Please Select An Address");
         return;
       }
 
@@ -38,14 +38,14 @@ function CartMain({
       //   return;
       // }
       const exceededProducts = cart.products.filter(
-        (product) => product.qty > product.stock,
+        (product) => product.qty > product.stock
       );
 
       if (exceededProducts.length > 0) {
         exceededProducts.forEach((product) => {
           Notification(
-            'error',
-            `Limit exceeded for ${product.name}. Available stock: ${product.stock}`,
+            "error",
+            `Limit exceeded for ${product.name}. Available stock: ${product.stock}`
           );
         });
         return;
@@ -56,10 +56,10 @@ function CartMain({
       // } else {
       const {
         data: { message },
-      } = await API.post('/order', {
+      } = await API.post("/order", {
         addressId,
       });
-      if (message) Notification('success', message);
+      if (message) Notification("success", message);
       //   const {
       //     data: {
       //       data: { id, amount },
@@ -97,21 +97,21 @@ function CartMain({
       // };
       // const rzp1 = new Razorpay(options);
       // rzp1.open();
-      history('/user/orders');
+      history("/user/orders");
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log('Cart', cart);
+  console.log("Cart", cart);
 
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9 ' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-1" style={{ borderRight: "1px solid #E9E9E9 " }}>
+          <span style={{ display: "none" }}>.</span>
         </div>
-        <div className="col-lg-9">
+        <div className="col-lg-10">
           <div className="cart-section">
             <div className="container">
               {cart && cart?.products && cart?.products.length === 0 ? (
@@ -167,7 +167,7 @@ function CartMain({
                             <th scope="row" />
                             <td className="discount">Discount :</td>
                             <td className="text-end price-text">
-                              <span className="me-2 ">-</span> {cart?.discount}{' '}
+                              <span className="me-2 ">-</span> {cart?.discount}{" "}
                               $
                             </td>
                           </tr>
@@ -176,7 +176,7 @@ function CartMain({
                             <td className="info-btn">
                               Tax
                               {/* <i className="bi bi-info-circle" /> */}
-                              <span className="ms-3">:</span>{' '}
+                              <span className="ms-3">:</span>{" "}
                             </td>
                             <td className="text-end price-text">
                               <span className="me-2">+</span> {cart?.tax} $
@@ -196,18 +196,18 @@ function CartMain({
                       <div className="Delivery-fix-body">
                         <div className="Delivery-at-contain">
                           <div className="icon-box">
-                            <iconify-icon icon="mdi:map-marker-outline" />{' '}
+                            <iconify-icon icon="mdi:map-marker-outline" />{" "}
                           </div>
-                          <div style={{ width: '88%' }}>
+                          <div style={{ width: "88%" }}>
                             <div className="Delivery-at">
                               <p>
-                                {' '}
-                                Delivery at{' '}
+                                {" "}
+                                Delivery at{" "}
                                 <span className="tag">
-                                  {' '}
+                                  {" "}
                                   {addressToDeliver?.addressType}
                                 </span>
-                              </p>{' '}
+                              </p>{" "}
                               <span className="">
                                 <Link to="/user/address" className="Change">
                                   <a>Change</a>
@@ -217,9 +217,9 @@ function CartMain({
                             <p
                               className="addres"
                               style={{
-                                whiteSpace: 'nowrap',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
                               }}
                             >
                               {addressToDeliver?.shippingAddress.addressLine1}
@@ -231,7 +231,7 @@ function CartMain({
                         <a
                           onClick={() =>
                             handlePayment(
-                              addressToDeliver && addressToDeliver._id,
+                              addressToDeliver && addressToDeliver._id
                             )
                           }
                           className="place-btn"
@@ -243,14 +243,14 @@ function CartMain({
                       <div className="Delivery-fix-body">
                         <div className="Delivery-at-contain">
                           <div className="icon-box">
-                            <iconify-icon icon="mdi:map-marker-outline" />{' '}
+                            <iconify-icon icon="mdi:map-marker-outline" />{" "}
                           </div>
                           <div>
                             <div className="Delivery-at">
                               <Link to="/user/address/new" className="Change">
-                                <p style={{ margin: 'auto', color: '#F9DF23' }}>
+                                <p style={{ margin: "auto", color: "#F9DF23" }}>
                                   Select Delivery Address
-                                </p>{' '}
+                                </p>{" "}
                               </Link>
                             </div>
                           </div>
@@ -258,11 +258,11 @@ function CartMain({
                         <a
                           onClick={() =>
                             handlePayment(
-                              addressToDeliver && addressToDeliver._id,
+                              addressToDeliver && addressToDeliver._id
                             )
                           }
                           className="place-btn"
-                          style={{ cursor: 'pointer' }}
+                          style={{ cursor: "pointer" }}
                         >
                           <p>Place Order</p>
                         </a>

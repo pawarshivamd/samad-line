@@ -12,12 +12,12 @@
   --btn-hover: #e79835;
 }
 /* add new section css  */
-.banner-info{
-    
-  background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../asstes/img/hero/about-banner.png");
+.banner-info{ 
+  background: url("../../asstes/img/hero/about-banner1.png");
   background-size:cover;
   height: 200vh;
   background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   .banner-info-box{
     position: absolute;
@@ -34,10 +34,50 @@
         font-style: normal;
         font-weight: 300;
         line-height: 40px;
-        /* 129.032% */
         letter-spacing: 0.62px;
+        margin-bottom: 0 ;
     }
   }
+}
+@media (min-width:600px) and (max-width:1024px) {
+    .banner-info {
+    
+        height: 1000px;
+        background-size: contain;
+    
+        .banner-info-box {
+          position: absolute;
+          width: min(100% - 10px, 70%);
+    
+          .text-about {
+            color: var(--white);
+            text-align: center;
+            font-size: 17px;
+            line-height: 20px;
+            /* 129.032% */
+            letter-spacing: 0.62px;
+          }
+        }
+      }
+    }
+@media (max-width:600px) {
+  .banner-info {
+  
+      height: 400px;
+      background-size: contain;
+      .banner-info-box {
+        position: absolute;
+        width: min(100% - 10px, 90%);
+        .text-about {
+          color: var(--white);
+          text-align: center;
+          font-size: 10px;
+          line-height: 20px;
+          /* 129.032% */
+          letter-spacing: 0.62px;
+        }
+      }
+    }
 }
 /* add new section css end */
 .sidebar-produtespage {
@@ -1071,7 +1111,7 @@
 }
 
 .my-whish-section .my-whish-contain .my-wish-list .star i {
-  color: #F9DF23;
+  color: var(--black);
 }
 
 .my-whish-section .my-whish-contain .my-wish-list .btn-mywish-body {
@@ -1117,9 +1157,9 @@
 
 .my-whish-section .my-whish-contain .btn-mywish-body a .btn-mywhish:hover{
 
-  background-color: var(--them-colour);
+  /* background-color: var(--them-colour);
   color: var(---black) !important ;
-  border: 1px solid var(--black);
+  border: 1px solid var(--black); */
 
 }
 
@@ -1139,11 +1179,11 @@
   justify-content: center;
   align-items: center;
   height: 20px;
-  width: 20px;
+  width: 30px;
   padding: 15px;
   cursor: pointer;
-  background-color: var(--white);
-  border: 1px solid #dee2e7;
+  /* background-color: var(--white); */
+  border: 1px solid transparent;
 }
 
 .my-whish-section .my-whish-contain .bin-body a i {
@@ -1268,6 +1308,7 @@
   height: fit-content !important;
   width: 50%;
   border-radius: 0 !important;
+  background: transparent;
 }
 
 .my-cart-contain .cart-input:focus {
@@ -1300,11 +1341,11 @@
   width: 20px;
   padding: 15px;
   cursor: pointer;
-  background-color: var(--white);
-  border: 1px solid #dee2e7;
+  /* background-color: var(--white); */
+  border: 1px solid transparent;
   /* shadow-sm */
   margin-top: 5px;
-  box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
+  /* box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08); */
   border-radius: 6px;
 }
 
@@ -1540,8 +1581,8 @@
 }
 
 .delivery-section .address-body .delivery-contain .delivery-btn p {
-  background-color: var(--them-colour);
-  border: 1px solid var(--them-colour);
+  background-color: var(--white);
+  border: 1px solid var(--white);
   padding: 5px 80px;
   cursor: pointer;
   transition: ease-out 0.4s;
@@ -1992,7 +2033,6 @@
   color: var(--black);
   font-weight: 500;
 }
-
 .profile-section .profile-left-body a:hover {
   color: var(--them-colour);
 }
@@ -4006,7 +4046,7 @@ footer .gym-icon-size i {
 footer .footer-left-body .footer-icon-box {
   display: flex;
   align-items: center;
-  max-width: 100px;
+  max-width: 150px;
 }
 
 footer .footer-left-body .footer-icon-box img {

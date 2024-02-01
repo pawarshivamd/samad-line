@@ -141,8 +141,13 @@ select:focus {
 .modal-dialog {
   z-index: 9999999;
   width: 377px;
+  position: relative;
+  top:96px;
+  right: 368px;
 }
+.modal-Box{
 
+}
 .modal-content {
   border: none;
   padding-bottom: 10px;
@@ -269,4 +274,25 @@ select:focus {
     font-size: 12px;
     margin-bottom: 10px;
   }
+}
+@media (max-width:1024px) and (min-width: 991px) {
+  .modal-dialog {
+    right:288px;
+    margin-inline: auto;
+  }
+}
+@media (max-width:992px) and (min-width: 767px) {
+  .modal-dialog {
+    right: 188px;
+    margin-inline: auto;
+  }
+}
+@media(max-width:767px){
+  .modal-dialog {
+      top: 117px;
+      right:0px;
+      left: 0px;
+      margin-inline: auto;
+      width: 350px;
+    }
 }

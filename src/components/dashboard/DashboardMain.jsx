@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 // import ProductListing from './ProductListing';
 // import BrandListing from './BrandListing';
 // import Blogs from './Blogs';
-import Categories from './Categories';
+import Categories from "./Categories";
 
 // const DashboardMain = ({ homeScreenData, addtoCart, addToWishlist }) => {
 const DashboardMain = ({ homeScreenData }) => {
@@ -26,7 +26,7 @@ const DashboardMain = ({ homeScreenData }) => {
     }
   };
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
   }, []);
 
@@ -51,7 +51,7 @@ const DashboardMain = ({ homeScreenData }) => {
               >
                 <SwiperSlide className=" swiper-slide">
                   <img
-                    src="asstes/img/hero/2.png"
+                    src="asstes/img/hero/banner.jpg"
                     className="img-fluied banner-img"
                     alt=""
                   />
@@ -59,7 +59,7 @@ const DashboardMain = ({ homeScreenData }) => {
 
                 <SwiperSlide className=" swiper-slide">
                   <img
-                    src="asstes/img/hero/2.png"
+                    src="asstes/img/hero/banner.jpg"
                     className="img-fluied banner-img"
                     alt=""
                   />
@@ -67,7 +67,7 @@ const DashboardMain = ({ homeScreenData }) => {
 
                 <SwiperSlide className=" swiper-slide">
                   <img
-                    src="asstes/img/hero/2.png"
+                    src="asstes/img/hero/banner.jpg"
                     className="img-fluied banner-img"
                     alt=""
                   />
@@ -75,7 +75,7 @@ const DashboardMain = ({ homeScreenData }) => {
 
                 <SwiperSlide className="swiper-slide">
                   <img
-                    src="asstes/img/hero/2.png"
+                    src="asstes/img/hero/banner.jpg"
                     className="img-fluied banner-img"
                     alt=""
                   />
@@ -93,10 +93,22 @@ const DashboardMain = ({ homeScreenData }) => {
         isMobile={isMobile}
         isTablet={isTablet}
       />
-      <div className="container-xxl banner-wrapper pb-0" >
+      <div className="container-xxl banner-wrapper pb-0">
         <div className="banner-info">
-          <div className='banner-info-box'>
-          <p className='text-about'>Lorem ipsum dolor sit amet consectetur. Risus hac at pulvinar aliquam pulvinar. Aliquet risus lobortis vel pharetra. Arcu ac eros nunc augue urna diam purus faucibus metus. Volutpat integer dolor mi nisl quis sollicitudin at. Enim purus arcu ac sed. Gravida egestas eu dolor ultricies ut ut sed quisque. Pulvinar in ipsum adipiscing tristique sed facilisis viverra accumsan. Sit sit turpis sed risus velit tristique risus. Condimentum amet ipsum orci turpis at ullamcorper pretium. Non semper sed senectus felis. Arcu fringilla euismod ipsum ullamcorper leo dignissim ac egestas ullamcorper. Leo amet.</p></div>
+          <div className="banner-info-box">
+            <p className="text-about">
+              Lorem ipsum dolor sit amet consectetur. Risus hac at pulvinar
+              aliquam pulvinar. Aliquet risus lobortis vel pharetra. Arcu ac
+              eros nunc augue urna diam purus faucibus metus. Volutpat integer
+              dolor mi nisl quis sollicitudin at. Enim purus arcu ac sed.
+              Gravida egestas eu dolor ultricies ut ut sed quisque. Pulvinar in
+              ipsum adipiscing tristique sed facilisis viverra accumsan. Sit sit
+              turpis sed risus velit tristique risus. Condimentum amet ipsum
+              orci turpis at ullamcorper pretium. Non semper sed senectus felis.
+              Arcu fringilla euismod ipsum ullamcorper leo dignissim ac egestas
+              ullamcorper. Leo amet.
+            </p>
+          </div>
         </div>
       </div>
       {/* <ProductListing

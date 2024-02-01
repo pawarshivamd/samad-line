@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import NoAddressFound from 'components/notFound/NoAddressFound';
-import AddressBox from './AddressBox';
+import React from "react";
+import { Link } from "react-router-dom";
+import NoAddressFound from "components/notFound/NoAddressFound";
+import AddressBox from "./AddressBox";
 
 function AddressMain({
   addresses,
@@ -12,18 +12,18 @@ function AddressMain({
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9 ' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-1" style={{ borderRight: "1px solid #E9E9E9 " }}>
+          <span style={{ display: "none" }}>.</span>
         </div>
         <div className="col-lg-9">
           <div
             className="delivery-section"
-            style={{ background: '#FFFFFF', minHeight: 'calc(100vh - 115px)' }}
+            style={{ background: "#FFFFFF", minHeight: "calc(100vh - 115px)" }}
           >
             <div className="container">
               <div className="row  ">
                 {addresses.length ? (
-                  <div className="col-lg-7 offset-lg-1">
+                  <div className="col-lg-7 col-md-8">
                     <div className="address-body">
                       <div className="Address-head">
                         <p>Select Delivery Address</p>
@@ -48,7 +48,7 @@ function AddressMain({
                             deleteAddress={deleteAddress}
                             addressToDeliver={addressToDeliver}
                           />
-                        ),
+                        )
                       )}
                     </div>
                   </div>

@@ -12,7 +12,7 @@ main {
 .loader {
   --loader-size: 50px;
   --loader-border-size: 4px;
-  --loader-border-color: #F9DF23;
+  --loader-border-color: #000;
   width: var(--loader-size);
   height: var(--loader-size);
   border: var(--loader-border-size) solid var(--loader-border-color);

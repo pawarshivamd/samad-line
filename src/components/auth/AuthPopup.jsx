@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import './auth.css';
-import { Modal } from 'react-bootstrap';
-import axios from 'axios';
-import Notification from 'components/Notification/Notification';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import React, { useState } from "react";
+import "./auth.css";
+import { Modal } from "react-bootstrap";
+import axios from "axios";
+import Notification from "components/Notification/Notification";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [password, setPassword] = useState('');
-  const [resetEmail, setResetEmail] = useState('');
+  const [password, setPassword] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleForgotPassword = () => {
@@ -25,14 +25,14 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
     axios
       .post(`${apiUrl}/user/forgetpassword`, { email: resetEmail })
       .then((response) => {
-        Notification('Success', 'Password has been sent to your mail');
+        Notification("Success", "Password has been sent to your mail");
         console.log(response.data);
-        setResetEmail('');
+        setResetEmail("");
         setShowModal(false);
       })
       .catch((error) => {
         // console.error(error);
-        Notification('error', error.response.data.error);
+        Notification("error", error.response.data.error);
       });
   };
 
@@ -42,7 +42,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
 
   const handleKeyDownlogin = (event) => {
     // Check if the pressed key is Enter (keyCode 13)
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       handleSubmit();
     }
@@ -50,7 +50,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
 
   const handleKeyDownforgetpass = (event) => {
     // Check if the pressed key is Enter (keyCode 13)
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       handleForgetPassword();
     }
@@ -59,10 +59,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
   return (
     <div>
       <Modal show={authPopupState}>
-        <div
-          className="modal-dialog"
-          style={{ margin: 0, padding: '13px 26px' }}
-        >
+        <div className="modal-box" style={{ margin: 0, padding: "13px 26px" }}>
           <div className="modal-content">
             <div className="text-end">
               <button
@@ -72,8 +69,8 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                 aria-label="Close"
                 onClick={() => {
                   changePopupState(false);
-                  setEmail('');
-                  setPassword('');
+                  setEmail("");
+                  setPassword("");
                 }}
               />
             </div>
@@ -103,27 +100,27 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               /> */}
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: "relative" }}>
                 <input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  style={{ paddingRight: '30px' }} // Adjust the padding to make space for the eye button
+                  style={{ paddingRight: "30px" }} // Adjust the padding to make space for the eye button
                 />
                 <button
                   type="button"
                   // className="fa fa-eye"
                   onClick={() => setShowPassword(!showPassword)}
                   style={{
-                    position: 'absolute',
-                    right: '5px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
+                    position: "absolute",
+                    right: "5px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    border: "none",
+                    background: "transparent",
+                    cursor: "pointer",
                   }}
                 >
                   {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
@@ -134,9 +131,9 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                   className="forgot-password-link"
                   onClick={handleForgotPassword}
                   style={{
-                    cursor: 'pointer',
-                    color: '#5b3503de',
-                    textDecoration: 'underline',
+                    cursor: "pointer",
+                    color: "#5b3503de",
+                    textDecoration: "underline",
                   }}
                 >
                   Forgot Password?
@@ -148,7 +145,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                   className="submit-profile"
                   onClick={handleSubmit}
                   value="Login"
-                  style={{ textAlign: 'center', cursor: 'pointer' }}
+                  style={{ textAlign: "center", cursor: "pointer" }}
                 />
               </div>
             </div>
@@ -156,10 +153,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
         </div>
       </Modal>
       <Modal show={showModal}>
-        <div
-          className="modal-dialog"
-          style={{ margin: 0, padding: '13px 26px' }}
-        >
+        <div className="modal-box" style={{ margin: 0, padding: "13px 26px" }}>
           <div className="modal-content">
             <div className="text-end">
               <button
@@ -169,7 +163,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                 aria-label="Close"
                 onClick={() => {
                   setShowModal(false);
-                  setResetEmail('');
+                  setResetEmail("");
                 }}
               />
             </div>
@@ -198,7 +192,7 @@ function AuthPopup({ verifyUserOtp, authPopupState, changePopupState }) {
                   className="submit-profile"
                   onClick={handleForgetPassword}
                   value="Reset"
-                  style={{ textAlign: 'center', cursor: 'pointer' }}
+                  style={{ textAlign: "center", cursor: "pointer" }}
                 />
               </div>
             </div>

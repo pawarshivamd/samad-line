@@ -1,11 +1,11 @@
-import classNames from 'classnames';
-import Loader from 'components/common/loader/Loader';
-import EmptyOrder from 'components/notFound/EmptyOrder';
-import moment from 'moment';
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { changeSearchText, getUserOrders } from 'redux/auth/actions';
+import classNames from "classnames";
+import Loader from "components/common/loader/Loader";
+import EmptyOrder from "components/notFound/EmptyOrder";
+import moment from "moment";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { changeSearchText, getUserOrders } from "redux/auth/actions";
 
 function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
   useEffect(() => {
@@ -13,7 +13,7 @@ function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
   }, [getOrders]);
 
   useEffect(() => {
-    setSearchText('');
+    setSearchText("");
   }, []);
 
   useEffect(() => {
@@ -23,9 +23,9 @@ function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
   return (
     <div
       style={{
-        minHeight: 'calc(100vh - 115px)',
-        overflow: 'auto',
-        background: '#fff',
+        minHeight: "calc(100vh - 115px)",
+        overflow: "auto",
+        background: "#fff",
       }}
     >
       {loading ? (
@@ -34,10 +34,10 @@ function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
         <div className="container-xxl">
           <div className="row">
             <div
-              className="col-lg-2"
-              style={{ borderRight: '1px solid #E9E9E9 ' }}
+              className="col-lg-1"
+              style={{ borderRight: "1px solid #E9E9E9 " }}
             >
-              <span style={{ display: 'none' }}>.</span>
+              <span style={{ display: "none" }}>.</span>
             </div>
             <div className="col-lg-9">
               {orders.length ? (
@@ -64,23 +64,23 @@ function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
                                       <div className="d-flex justify-content-center align-items-center">
                                         <div
                                           className={classNames(
-                                            'my-order-img-box',
+                                            "my-order-img-box",
                                             order.currentOrderStatus.status ===
-                                              'Order Delivered' &&
-                                              'my-order-img-box-green',
+                                              "Order Delivered" &&
+                                              "my-order-img-box-green",
                                             order.currentOrderStatus.status ===
-                                              'Cancelled' &&
-                                              'my-order-img-box-red',
+                                              "Cancelled" &&
+                                              "my-order-img-box-red"
                                           )}
                                         >
                                           <a>
                                             {order.currentOrderStatus &&
                                             [
-                                              'Order Placed',
-                                              'Order Confirmed',
-                                              'Out For Delivery',
+                                              "Order Placed",
+                                              "Order Confirmed",
+                                              "Out For Delivery",
                                             ].includes(
-                                              order.currentOrderStatus.status,
+                                              order.currentOrderStatus.status
                                             ) ? (
                                               <img
                                                 src="/asstes/img/order-logo/package.png"
@@ -102,20 +102,19 @@ function OrderList({ getOrders, loading, orders, keyword, setSearchText }) {
 
                                         {order &&
                                         order.currentOrderStatus.status ===
-                                          'Order Delivered' ? (
+                                          "Order Delivered" ? (
                                           <h6>
-                                            Delivered On{' '}
+                                            Delivered On{" "}
                                             {moment(
-                                              order.currentOrderStatus
-                                                .createdAt,
-                                            ).format('Do MMMM  YYYY')}
+                                              order.currentOrderStatus.createdAt
+                                            ).format("Do MMMM  YYYY")}
                                           </h6>
                                         ) : (
                                           <h6>
-                                            Delivery On{' '}
+                                            Delivery On{" "}
                                             {moment(order.createdAt)
-                                              .add(4, 'days')
-                                              .format('Do MMMM YYYY')}
+                                              .add(4, "days")
+                                              .format("Do MMMM YYYY")}
                                           </h6>
                                         )}
                                       </div>

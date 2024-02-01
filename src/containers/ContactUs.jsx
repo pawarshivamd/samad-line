@@ -1,6 +1,6 @@
-import Notification from 'components/Notification/Notification';
-import API from 'helpers/API';
-import React, { useState } from 'react';
+import Notification from "components/Notification/Notification";
+import API from "helpers/API";
+import React, { useState } from "react";
 
 const ContactUs = () => {
   const [ContactDetails, setContactDetails] = useState({});
@@ -9,7 +9,7 @@ const ContactUs = () => {
       return { ...oldState, [e.target.name]: e.target.value };
     });
   };
-  console.log('ContactDetails', ContactDetails);
+  console.log("ContactDetails", ContactDetails);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,32 +21,32 @@ const ContactUs = () => {
       !ContactDetails.subject
     ) {
       // Handle error, show a message, or prevent form submission
-      Notification('error', 'Please fill in all fields');
+      Notification("error", "Please fill in all fields");
       return;
     }
 
     try {
       const {
         data: { message },
-      } = await API.post('/order/contactus', ContactDetails);
-      if (message) Notification('success', 'Thank you for contacting us');
+      } = await API.post("/order/contactus", ContactDetails);
+      if (message) Notification("success", "Thank you for contacting us");
       setContactDetails({
-        name: '',
-        number: '',
-        subject: '',
-        message: '',
-        email: '',
+        name: "",
+        number: "",
+        subject: "",
+        message: "",
+        email: "",
       });
     } catch {
-      Notification('error', 'Something Went Wrong');
+      Notification("error", "Something Went Wrong");
     }
   };
 
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-2" style={{ borderRight: "1px solid #E9E9E9" }}>
+          <span style={{ display: "none" }}>.</span>
         </div>
         <div className="col-lg-10">
           <div className="contact-section">
@@ -62,7 +62,7 @@ const ContactUs = () => {
                 <div className="col-lg-12 col-md-12 order-lg-1 order-2 order-md-2">
                   <div
                     className="col-lg-12  contact-body"
-                    style={{ backgroundColor: '#FFFFFF' }}
+                    style={{ backgroundColor: "#FFFFFF" }}
                   >
                     <div className="contact-box ">
                       <h4 className="pb-3 ">Contact Way</h4>
@@ -79,21 +79,21 @@ const ContactUs = () => {
                                 <p>
                                   Tel:
                                   <a
-                                    href="tel:+961 71 935 735"
+                                    href="tel:877-67-88-99"
                                     className="num-email-colour"
                                   >
-                                    {' '}
-                                    +961 71 935 735
+                                    {" "}
+                                    877-67-88-99
                                   </a>
                                 </p>
                                 <p>
-                                  E-Mail:{' '}
+                                  E-Mail:{" "}
                                   <a
-                                    href="mailto:info@espacecarre.com"
+                                    href="mailto:shop@store.com"
                                     className="num-email-colour"
                                   >
-                                    {' '}
-                                    info@espacecarre.com{' '}
+                                    {" "}
+                                    shop@store.com{" "}
                                   </a>
                                 </p>
                               </div>
@@ -114,8 +114,8 @@ const ContactUs = () => {
                                   target="_blank"
                                   rel="noreferrer"
                                 >
-                                  <p>kaslik main street Joünié</p>
-                                  <p>Joünié</p>
+                                  <p>20 Margaret st, London</p>
+                                  <p>Great britain, 3NM98-LK</p>
                                 </a>
                               </div>
                             </div>
@@ -145,8 +145,8 @@ const ContactUs = () => {
                             </div>
                             <div className="col-10 ">
                               <div className="ps-1 py-1">
-                                <p>Free shipping on orders</p>
-                                <p>above 100$</p>
+                                <p>Free standard shipping</p>
+                                <p>on all orders.</p>
                               </div>
                             </div>
                           </div>
@@ -159,12 +159,15 @@ const ContactUs = () => {
                   <div className="get-touch-body">
                     <h4 className="pb-3 ">Get In Touch</h4>
                     <p style={{}} className="own-espace-text">
-                      Your Own Espace
+                      {/* Your Own Espace */}
                     </p>
                     <p className="own-espace-text">
-                      {' '}
-                      Uncover a unique and sophisticated home accessories
-                      collection
+                      {" "}
+                      {/* Uncover a unique and sophisticated home accessories
+                      collection */}
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Mattis neque ultrices tristique amet erat vitae eget dolor
+                      los vitae lobortis quis bibendum quam.
                     </p>
 
                     <form>

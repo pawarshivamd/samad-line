@@ -221,7 +221,7 @@ function ForgotAuthPopup({ userDetails, authPopupState, changePopupState }) {
     <div>
       <Modal show={authPopupState}>
         <div
-          className="modal-dialog"
+          className="modal-box"
           style={{ margin: 0, padding: '13px 26px' }}
         >
           <div className="modal-content">

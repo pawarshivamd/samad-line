@@ -284,7 +284,7 @@
   }
 
   footer .footer-left-body .footer-icon-box {
-    width: 70px;
+    /* width: 70px; */
   }
 
   footer .copy-right-text {
@@ -1282,7 +1282,7 @@
   }
 
   .delivery-section .address-body .delivery-contain {
-    background: none;
+    /* background: none; */
   }
   .products-grid-body{
     justify-content: center;

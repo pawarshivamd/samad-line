@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import './auth.css';
-import { Modal } from 'react-bootstrap';
-import Notification from 'components/Notification/Notification';
-import API from 'helpers/API';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import React, { useState } from "react";
+import "./auth.css";
+import { Modal } from "react-bootstrap";
+import Notification from "components/Notification/Notification";
+import API from "helpers/API";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 // const countryCode = process.env.REACT_APP_COUNTRY_CODE || '+961';
 
 function SignupPopup({ signupPopupState, changeSignupPopupState }) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    mobileNo: '',
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    mobileNo: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -22,11 +22,11 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'mobileNo') {
+    if (name === "mobileNo") {
       let formattedValue = value;
 
       // Ensure the value starts with "+961"
-      if (!value.startsWith('+961')) {
+      if (!value.startsWith("+961")) {
         formattedValue = `+961${value}`;
       }
 
@@ -35,7 +35,7 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
       setFormData({ ...formData, [name]: value });
     }
   };
-  console.log('formData', formData);
+  console.log("formData", formData);
 
   const validateForm = () => {
     const { name, email, password, confirmPassword, mobileNo } = formData;
@@ -44,11 +44,11 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
 
     // Validation logic
     if (!name.trim()) {
-      errorsData.name = 'Name is required';
-      Notification('error', 'Name is required');
+      errorsData.name = "Name is required";
+      Notification("error", "Name is required");
     } else if (!/^[a-zA-Z\s]+$/.test(name)) {
-      errorsData.name = 'Name should only contain letters and spaces';
-      Notification('error', 'Name should only contain letters and spaces');
+      errorsData.name = "Name should only contain letters and spaces";
+      Notification("error", "Name should only contain letters and spaces");
     }
 
     // Validate email using a regular expression
@@ -67,15 +67,15 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
     // }
 
     if (!email.trim()) {
-      errorsData.email = 'Email is required';
-      Notification('error', 'Email is required');
+      errorsData.email = "Email is required";
+      Notification("error", "Email is required");
     } else if (
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
       /[;]+/.test(email) ||
       /\.com.+$/i.test(email) // Check if there are characters after ".com" (case-insensitive)
     ) {
-      errorsData.email = 'Invalid email format';
-      Notification('error', 'Please enter valid email');
+      errorsData.email = "Invalid email format";
+      Notification("error", "Please enter valid email");
     }
 
     // if (mobileNo !== '' && mobileNo.trim() && !/^[0-9]{8}$/.test(mobileNo)) {
@@ -84,26 +84,26 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
     // }
 
     // Extract the numeric part of mobileNo (ignoring the country code)
-    const numericPart = mobileNo.replace('+961', '');
+    const numericPart = mobileNo.replace("+961", "");
 
     // Check if the numeric part is not empty and doesn't match the specified format
     if (numericPart.trim() && !/^[0-9]{8}$/.test(numericPart)) {
       errorsData.mobileNo =
-        'Invalid phone number format. Must be 8 digits and only contain numbers.';
+        "Invalid phone number format. Must be 8 digits and only contain numbers.";
       Notification(
-        'error',
-        'Invalid phone number format. Must be 8 digits and only contain numbers.',
+        "error",
+        "Invalid phone number format. Must be 8 digits and only contain numbers."
       );
     }
 
     if (password.length < 6) {
-      errorsData.password = 'Password must be at least 6 characters';
-      Notification('error', 'Password must be at least 6 characters');
+      errorsData.password = "Password must be at least 6 characters";
+      Notification("error", "Password must be at least 6 characters");
     }
 
     if (password !== confirmPassword) {
-      errorsData.confirmPassword = 'Confirm password must match with Password';
-      Notification('error', 'Confirm password must match with Password');
+      errorsData.confirmPassword = "Confirm password must match with Password";
+      Notification("error", "Confirm password must match with Password");
     }
 
     setErrors(errorsData);
@@ -115,32 +115,32 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
 
     if (isValid) {
       try {
-        const response = await API.post('/user/signup', formData);
-        console.log('formdata', formData);
+        const response = await API.post("/user/signup", formData);
+        console.log("formdata", formData);
         const { data, status } = response;
-        console.log('datatest', data);
+        console.log("datatest", data);
         if (status === 201) {
           // Handle successful signup
-          Notification('success', 'Signup successful!');
+          Notification("success", "Signup successful!");
           changeSignupPopupState(false); // Close the signup modal or perform any other action
-          localStorage.setItem('userData', JSON.stringify(formData));
+          localStorage.setItem("userData", JSON.stringify(formData));
           setFormData({
-            name: '',
-            email: '',
-            password: '',
-            confirmPassword: '',
-            mobileNo: '',
+            name: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            mobileNo: "",
           });
           // Additional logic if needed
         } else {
           // Handle signup failure
-          Notification('error', data.error);
+          Notification("error", data.error);
           // Additional logic if needed
         }
       } catch (error) {
         console.log(error);
         // Handle error from API request
-        Notification('error', 'Error during signup. Please try again.');
+        Notification("error", "Error during signup. Please try again.");
         // Additional logic if needed
       }
     } else {
@@ -150,7 +150,7 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
 
   const handleKeyDown = (event) => {
     // Check if the pressed key is Enter (keyCode 13)
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault();
       handleSubmit();
     }
@@ -158,11 +158,8 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
 
   return (
     <div>
-      <Modal show={signupPopupState}>
-        <div
-          className="modal-dialog"
-          style={{ margin: 0, padding: '13px 26px' }}
-        >
+      <Modal show={signupPopupState} className="modal-d" left>
+        <div className="modal-box" style={{ margin: 0, padding: "13px 26px" }}>
           <div className="modal-content">
             <div className="text-end">
               <button
@@ -173,11 +170,11 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                 onClick={() => {
                   changeSignupPopupState(false);
                   setFormData({
-                    name: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                    mobileNo: '',
+                    name: "",
+                    email: "",
+                    password: "",
+                    confirmPassword: "",
+                    mobileNo: "",
                   });
                   setErrors({});
                 }}
@@ -203,7 +200,7 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                 onChange={handleChange}
                 onInput={(e) => {
                   // Remove any non-alphabetic characters and non-whitespace characters from the input
-                  e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, '');
+                  e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, "");
                 }}
               />
               {errors.name && <p className="error">{errors.name}</p>}
@@ -215,56 +212,56 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                 onChange={handleChange}
               />
               {errors.email && <p className="error">{errors.email}</p>}
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: "relative" }}>
                 <input
                   // type="password"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  style={{ paddingRight: '30px' }}
+                  style={{ paddingRight: "30px" }}
                 />
                 <button
                   type="button"
                   // className="fa fa-eye"
                   onClick={() => setShowPassword(!showPassword)}
                   style={{
-                    position: 'absolute',
-                    right: '5px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
+                    position: "absolute",
+                    right: "5px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    border: "none",
+                    background: "transparent",
+                    cursor: "pointer",
                   }}
                 >
                   {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
                 </button>
               </div>
               {errors.password && <p className="error">{errors.password}</p>}
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: "relative" }}>
                 <input
                   // type="password"
-                  type={showConfirmPassword ? 'text' : 'password'}
+                  type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm Password"
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  style={{ paddingRight: '30px' }}
+                  style={{ paddingRight: "30px" }}
                 />
                 <button
                   type="button"
                   // className="fa fa-eye"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   style={{
-                    position: 'absolute',
-                    right: '5px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
+                    position: "absolute",
+                    right: "5px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    border: "none",
+                    background: "transparent",
+                    cursor: "pointer",
                   }}
                 >
                   {showConfirmPassword ? (
@@ -285,10 +282,10 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                 onChange={handleChange}
                 maxLength="13" // Set maximum length to 10 digits
               /> */}
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <span
                   className="pt-2 pb-2 ps-3 pe-3"
-                  style={{ marginRight: '5px', border: '1px solid black' }}
+                  style={{ marginRight: "5px", border: "1px solid black" }}
                 >
                   +961
                 </span>
@@ -298,7 +295,7 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                   name="mobileNo"
                   // value={formData.mobileNo}
                   value={
-                    formData.mobileNo.startsWith('+961')
+                    formData.mobileNo.startsWith("+961")
                       ? formData.mobileNo.slice(4)
                       : formData.mobileNo
                   }
@@ -313,7 +310,7 @@ function SignupPopup({ signupPopupState, changeSignupPopupState }) {
                   className="submit-profile"
                   onClick={handleSubmit}
                   value="Sign Up"
-                  style={{ textAlign: 'center', cursor: 'pointer' }}
+                  style={{ textAlign: "center", cursor: "pointer" }}
                   // onKeyDown={handleKeyDown}
                 />
               </div>

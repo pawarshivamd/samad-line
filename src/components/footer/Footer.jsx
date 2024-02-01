@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
@@ -8,7 +8,10 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="row" style={{ justifyContent: 'space-between' }}>
+        <div
+          className="row"
+          style={{ justifyContent: "space-between", alignItems: "center" }}
+        >
           <div className="col-lg-3 col-md-6 col-sm-6 footer-left-body ">
             <div className="footer-icon-box">
               <img src="../asstes/img/logo/logo.png" alt="logo" />
@@ -160,14 +163,15 @@ const Footer = () => {
         </div>
         <div className="d-flex justify-content-end mt-3">
           <p className="copy-right-text">
-            Copyrights &copy; {currentYear} All Rights Reserved | Powered by
+            {/* Copyrights &copy; {currentYear} All Rights Reserved | Powered by */}
+            {currentYear} &copy; samad line All Right Reserved
             <a
               href="http://creativecartel.me/"
               target="_blank"
               rel="noreferrer"
               className="copy-right-text ms-1"
             >
-              <b>Creative Cartel</b>
+              {/* <b>Creative Cartel</b> */}
             </a>
           </p>
         </div>

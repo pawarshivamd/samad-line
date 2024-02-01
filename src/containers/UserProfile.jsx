@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
   changeSearchText,
   logOutUser,
   setForgotPopup,
   updateUserDetails,
-} from 'redux/auth/actions';
-import ForgotAuthPopup from 'components/auth/ForgotAuthPopup';
+} from "redux/auth/actions";
+import ForgotAuthPopup from "components/auth/ForgotAuthPopup";
 
 function UserProfile({
   currentUser,
@@ -20,10 +20,10 @@ function UserProfile({
   updateDetails,
 }) {
   const [userDetails, setUserDetails] = useState({
-    firstName: '',
-    lastName: '',
-    mobileNo: '',
-    email: '',
+    firstName: "",
+    lastName: "",
+    mobileNo: "",
+    email: "",
   });
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function UserProfile({
   }, [currentUser]);
 
   useEffect(() => {
-    setSearchText('');
+    setSearchText("");
   }, []);
 
   useEffect(() => {
@@ -52,13 +52,16 @@ function UserProfile({
             <div className="row">
               <div
                 className="col-lg-2 col-md-4 p-0 order-lg-1 order-2 order-md-1"
-                style={{ borderRight: '1px solid #E9E9E9 ' }}
+                style={{ borderRight: "1px solid #E9E9E9 " }}
               >
                 <div className="profile-left-body">
                   <div className="d-flex py-2">
                     <Link to="/user/orders" className="d-flex">
                       <label htmlFor="Orders" className="p-1">
-                        <iconify-icon icon="mdi:calendar-text-outline" />
+                        <iconify-icon
+                          icon="mdi:calendar-text-outline"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Orders">
                         Orders
@@ -69,10 +72,13 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/user/address" className="d-flex">
                       <label htmlFor="Address" className="p-1">
-                        <iconify-icon icon="ph:map-pin-light" />
+                        <iconify-icon
+                          icon="ph:map-pin-light"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Address">
-                        Address
+                        Addresses
                       </p>
                     </Link>
                   </div>
@@ -80,7 +86,10 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/user/wishlist" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
-                        <iconify-icon icon="mdi:cards-heart-outline" />
+                        <iconify-icon
+                          icon="mdi:cards-heart-outline"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Wishlist">
                         Wishlist
@@ -90,7 +99,10 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/about-us" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
-                        <iconify-icon icon="material-symbols:info-outline-rounded" />
+                        <iconify-icon
+                          icon="material-symbols:info-outline-rounded"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Wishlist">
                         About Us
@@ -100,7 +112,10 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/contact-us" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
-                        <iconify-icon icon="material-symbols:contact-support-outline" />
+                        <iconify-icon
+                          icon="material-symbols:contact-support-outline"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Wishlist">
                         Contact Us
@@ -110,7 +125,10 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/privacy-n-policy" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
-                        <iconify-icon icon="material-symbols:privacy-tip-outline-rounded" />
+                        <iconify-icon
+                          icon="material-symbols:privacy-tip-outline-rounded"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Wishlist">
                         Privacy Policy
@@ -120,7 +138,10 @@ function UserProfile({
                   <div className="d-flex py-2">
                     <Link to="/terms-of-use" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
-                        <iconify-icon icon="fluent:calendar-info-20-regular" />
+                        <iconify-icon
+                          icon="fluent:calendar-info-20-regular"
+                          style={{ color: "#7d7d7d" }}
+                        />
                       </label>
                       <p className="ps-3 profile-ptage" id="Wishlist">
                         Terms of Use
@@ -172,10 +193,13 @@ function UserProfile({
                   </a>
                 </div> */}
 
-                  <div className="d-flex py-2" style={{ cursor: 'pointer' }}>
+                  <div className="d-flex py-2" style={{ cursor: "pointer" }}>
                     <a onClick={() => logOut()} className="d-flex active-a ">
                       <label htmlFor="Log-out" className="p-1">
-                        <iconify-icon icon="material-symbols:logout-rounded" />
+                        <iconify-icon
+                          icon="material-symbols:logout-rounded"
+                          style={{ color: "#000000" }}
+                        />
                       </label>
                       <p id="Log-out" className="ps-3  profile-ptage">
                         Log out
@@ -276,7 +300,7 @@ function UserProfile({
                         <label
                           htmlFor="lname"
                           className="pb-2"
-                          style={{ color: '#5b3503de' }}
+                          style={{ color: "#5b3503de" }}
                         >
                           Change Password
                         </label>
