@@ -93,6 +93,12 @@ const DashboardMain = ({ homeScreenData }) => {
         isMobile={isMobile}
         isTablet={isTablet}
       />
+      <div className="container-xxl banner-wrapper pb-0" >
+        <div className="banner-info">
+          <div className='banner-info-box'>
+          <p className='text-about'>Lorem ipsum dolor sit amet consectetur. Risus hac at pulvinar aliquam pulvinar. Aliquet risus lobortis vel pharetra. Arcu ac eros nunc augue urna diam purus faucibus metus. Volutpat integer dolor mi nisl quis sollicitudin at. Enim purus arcu ac sed. Gravida egestas eu dolor ultricies ut ut sed quisque. Pulvinar in ipsum adipiscing tristique sed facilisis viverra accumsan. Sit sit turpis sed risus velit tristique risus. Condimentum amet ipsum orci turpis at ullamcorper pretium. Non semper sed senectus felis. Arcu fringilla euismod ipsum ullamcorper leo dignissim ac egestas ullamcorper. Leo amet.</p></div>
+        </div>
+      </div>
       {/* <ProductListing
         type="TRENDING NOW"
         products={homeScreenData?.trendingProducts}
@@ -108,9 +114,9 @@ const DashboardMain = ({ homeScreenData }) => {
           </div>
         </div>
       </div> */}
-      <div className="container-xxl">
+      {/* <div className="container-xxl">
         <div className="offer-section">
-          {/* <div className="offer-boday">
+          <div className="offer-boday">
             <div className="row">
               <div className=" col-lg-6 col-md-6 col-sm-12 ">
                 <div className="offer-contain">
@@ -131,9 +137,9 @@ const DashboardMain = ({ homeScreenData }) => {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
-      </div>
+      </div> */}
       {/* <ProductListing
         type="NEW ARRIVAL"
         products={homeScreenData?.newArrivals}

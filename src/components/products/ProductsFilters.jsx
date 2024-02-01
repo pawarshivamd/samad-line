@@ -241,42 +241,47 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
               className={`${isRatingOpen ? '' : 'Left-contain'}`}
               style={{ display: isRatingOpen ? 'none' : 'block' }}
             >
-              <p>
+            {/* 1 */}
+                        <p>
                 <input
                   type="checkbox"
                   className="check"
-                  id="star5"
-                  value="5"
+                  id="star1"
+                  value="1"
                   onChange={(e) => handleChangeFilter('rating', e.target.value)}
-                  checked={filterState.rating.includes('5')}
+                  checked={filterState.rating.includes('1')}
                   style={{ cursor: 'pointer' }}
                 />
-                <label for="star5" className="star">
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                </label>{' '}
-              </p>
-              <p>
-                <input
-                  type="checkbox"
-                  className="check"
-                  id="star4"
-                  value="4"
-                  onChange={(e) => handleChangeFilter('rating', e.target.value)}
-                  checked={filterState.rating.includes('4')}
-                  style={{ cursor: 'pointer' }}
-                />
-                <label for="star4" className="star">
+                <label for="star1" className="star">
                   <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
+                  <i className="fas fa-star " />
+                  <i className="fas fa-star " />
+                  <i className="fas fa-star " />
+                  <i className="fas fa-star " />
                 </label>{' '}
               </p>
+
+              {/* 2 */}
+                            <p>
+                <input
+                  type="checkbox"
+                  className="check"
+                  id="star2"
+                  value="2"
+                  onChange={(e) => handleChangeFilter('rating', e.target.value)}
+                  checked={filterState.rating.includes('2')}
+                  style={{ cursor: 'pointer' }}
+                />
+                <label for="star2" className="star">
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star " />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star " />
+                </label>{' '}
+              </p>
+
+              {/* 3 */}
               <p>
                 <input
                   type="checkbox"
@@ -290,45 +295,47 @@ const ProductsFilters = ({ homeScreenData, getProductList, keyword }) => {
                 <label for="star3" className="star">
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star" />
-                  <i className="fas fa-star " />
-                </label>{' '}
-              </p>
-              <p>
-                <input
-                  type="checkbox"
-                  className="check"
-                  id="star2"
-                  value="2"
-                  onChange={(e) => handleChangeFilter('rating', e.target.value)}
-                  checked={filterState.rating.includes('2')}
-                  style={{ cursor: 'pointer' }}
-                />
-                <label for="star2" className="star">
-                  <i className="fas fa-star no-colour" />
-                  <i className="fas fa-star no-colour" />
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star" />
                   <i className="fas fa-star " />
                 </label>{' '}
               </p>
+              {/* 4 */}
               <p>
                 <input
                   type="checkbox"
                   className="check"
-                  id="star1"
-                  value="1"
+                  id="star4"
+                  value="4"
                   onChange={(e) => handleChangeFilter('rating', e.target.value)}
-                  checked={filterState.rating.includes('1')}
+                  checked={filterState.rating.includes('4')}
                   style={{ cursor: 'pointer' }}
                 />
-                <label for="star1" className="star">
+                <label for="star4" className="star">
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star no-colour" />
                   <i className="fas fa-star" />
+                </label>{' '}
+              </p>
+              {/* 5 */}
+                <p>
+                <input
+                  type="checkbox"
+                  className="check"
+                  id="star5"
+                  value="5"
+                  onChange={(e) => handleChangeFilter('rating', e.target.value)}
+                  checked={filterState.rating.includes('5')}
+                  style={{ cursor: 'pointer' }}
+                />
+                <label for="star5" className="star">
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
+                  <i className="fas fa-star no-colour" />
                 </label>{' '}
               </p>
             </div>
