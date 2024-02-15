@@ -118,7 +118,7 @@ const Footer = () => {
               className="icon-footer-box "
               target="_blank"
               rel="noreferrer"
-              href="https://instagram.com/espacecarrelb?igshid=OGQ5ZDc2ODk2ZA=="
+              href="https://www.instagram.com/samadline_expertise/?hl=en"
             >
               Instagram <i className="fab fa-instagram" />
             </a>
@@ -126,7 +126,7 @@ const Footer = () => {
               className="icon-footer-box mt-2 "
               target="_blank"
               rel="noreferrer"
-              href="https://www.facebook.com/EspaceCarreLb?mibextid=LQQJ4d"
+              href="https://www.facebook.com/SamadLine1970"
             >
               Facebook
               <svg
@@ -155,7 +155,7 @@ const Footer = () => {
               className="icon-footer-box mt-2 "
               target="_blank"
               rel="noreferrer"
-              href="https://wa.me/96171935735"
+              href="#"
             >
               Whatsapp <i className="fab fa-whatsapp" />
             </a>

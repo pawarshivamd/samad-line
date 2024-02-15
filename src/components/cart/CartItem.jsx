@@ -5,8 +5,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-underscore-dangle */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CartItem = ({ value, removeItemFromCart, addtoCart, qty }) => {
   const [cartQty, setcartQty] = useState(qty);
@@ -28,9 +28,9 @@ const CartItem = ({ value, removeItemFromCart, addtoCart, qty }) => {
         <div className="col-lg-2 col-md-2 col-sm-12 d-flex align-items-center justify-content-center m-0 p-0">
           <div className="my-cart-img-box">
             <Link to={`/product/${value._id}`}>
-              {' '}
+              {" "}
               <img
-                src={value.images.find((elem) => elem?.url !== '')?.url}
+                src={value.images?.find((elem) => elem?.url !== "")?.url}
                 alt=""
               />
             </Link>
@@ -94,12 +94,12 @@ const CartItem = ({ value, removeItemFromCart, addtoCart, qty }) => {
         <div className="col-lg-3 col-md-3 col-sm-12   bin-box ">
           <div className="cart-oty-body">
             <div className="cart-price-text">
-              {' '}
+              {" "}
               {qty * (value.price ? value.price : value.mrp)} $
             </div>
             <div className=" oty-box">
               <label for="number" className="qty-text">
-                Qty{' '}
+                Qty{" "}
               </label>
               <input
                 min="1"
