@@ -45,7 +45,7 @@ const ContactUs = () => {
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: "1px solid #E9E9E9" }}>
+        <div className="col-lg-1">
           <span style={{ display: "none" }}>.</span>
         </div>
         <div className="col-lg-10">

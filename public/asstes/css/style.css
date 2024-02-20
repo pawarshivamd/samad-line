@@ -13,7 +13,7 @@
 }
 /* add new section css  */
 .banner-info{ 
-  background: url("../../asstes/img/hero/about-banner1.png");
+  background: url("../../asstes/img/hero/about-banner.jpg");
   background-size:cover;
   height: 200vh;
   background-repeat: no-repeat;
@@ -1063,9 +1063,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: var(--white);
-  height: 108px;
+  /* height: 108px; */
   width: 135px;
   /* margin: 8px; */
 
@@ -1238,7 +1238,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0px;
   background-color: var(--white);
   height: 108px;
   width: 108px;
@@ -1309,11 +1309,13 @@
   width: 50%;
   border-radius: 0 !important;
   background: transparent;
+  border: none;
 }
 
 .my-cart-contain .cart-input:focus {
   box-shadow: none;
   outline: none;
+  background-color: transparent;
 }
 
 .cart-section .my-cart-contain .my-cart-list .form-control input[type='number'] {
@@ -2837,9 +2839,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
   background-color: var(--white);
-  height: 108px;
+  /* height: 108px; */
   width: 108px;
   margin: 0px 10px;
 }
@@ -2876,16 +2878,16 @@
 }
 
 .Order-Details-traking-section .order-details-traking-contain .star-rating a i {
-  color: #acabab;
+  color: #b7b7b7;
   margin-inline: 2px;
 }
 
 .Order-Details-traking-section .order-details-traking-contain .star-rating a i:hover {
-  color: var(--them-colour);
+  color: var(--black);
 }
 
 .Order-Details-traking-section .order-details-traking-contain .star-rating .active {
-  color: var(--them-colour);
+  color: var(--black);
 }
 
 .Order-Details-traking-section .order-details-traking-contain .star-rating .rate-reveiws-link a {
@@ -3489,10 +3491,11 @@ select:focus {
 }
 
 .cat-round .carte-body {
-  /* display: flex; */
-  /* gap: 60px; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 20px;
   padding-inline: 35px;
 }

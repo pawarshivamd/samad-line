@@ -2,17 +2,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
-import { Link } from 'react-router-dom';
+import React from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination, Navigation } from "swiper";
+import { Link } from "react-router-dom";
 
-const Categories = ({ category = [], isMobile, isTablet }) => {
+const Categories = ({ category = [] }) => {
   return (
     <div className="cat-round">
       <div className="container-xxl">
         <div className="carte-body">
-          <div className="swiper carte-slider">
+          {/* <div className="swiper carte-slider">
             <Swiper
               className="swiper-wrapper"
               slidesPerView={isTablet ? 5 : isMobile ? 3 : 5}
@@ -40,7 +40,26 @@ const Categories = ({ category = [], isMobile, isTablet }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </div> */}
+          {category?.map((elem) => (
+            <div className="carte-item" key={elem._id}>
+              <Link to={`/products/category=${elem._id}`}>
+                <div className="carte-contain">
+                  <div className="carte carte-img-box ">
+                    <a>
+                      <img
+                        src={elem.image && elem.image?.url}
+                        alt={elem.name}
+                      />
+                    </a>
+                  </div>
+                  <p className="text-center">
+                    <a> {elem.name}</a>
+                  </p>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>

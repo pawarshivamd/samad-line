@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import AuthPopup from 'components/auth/AuthPopup';
-import SignupAuthPopup from 'components/auth/SignupAuthPopup';
+import AuthPopup from "components/auth/AuthPopup";
+import SignupAuthPopup from "components/auth/SignupAuthPopup";
 
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 // import { Link } from 'react-router-dom';
-import { getUserDetails } from 'redux/actions';
+import { getUserDetails } from "redux/actions";
 import {
   changeSearchText,
   loginUser,
@@ -14,8 +14,8 @@ import {
   setSignupAuthPopup,
   userSignupEmail,
   verifyOtp,
-} from 'redux/auth/actions';
-import { getHomeScreenData } from 'redux/product/actions';
+} from "redux/auth/actions";
+import { getHomeScreenData } from "redux/product/actions";
 
 const Navbar = ({
   currentUser,
@@ -33,7 +33,7 @@ const Navbar = ({
 }) => {
   const [show, setshow] = useState(false);
   const history = useNavigate();
-  const [text, settext] = useState('');
+  const [text, settext] = useState("");
   const {
     // brands,
     category,
@@ -51,7 +51,7 @@ const Navbar = ({
   }, [getHomeScreenDetails]);
 
   useEffect(() => {
-    if (keyword && keyword.length > 0) history('/products');
+    if (keyword && keyword.length > 0) history("/products");
     settext(keyword);
   }, [keyword]);
   // search after delay
@@ -63,7 +63,7 @@ const Navbar = ({
     return () => clearTimeout(setData);
   }, [text, setSearchText]);
   useEffect(() => {
-    const storedUser = localStorage.getItem('userData');
+    const storedUser = localStorage.getItem("userData");
     if (storedUser) {
       // Hide register button if user data is stored in localStorage
       changeSignupPopupState(false);
@@ -79,7 +79,7 @@ const Navbar = ({
               className="navbar-brand img-nav"
               to="/"
               onClick={() => {
-                setSearchText('');
+                setSearchText("");
               }}
             >
               <img
@@ -102,7 +102,7 @@ const Navbar = ({
               <i className="fas fa-bars" />
             </button>
             <div
-              className={`collapse navbar-collapse ${show ? 'show' : ''}`}
+              className={`collapse navbar-collapse ${show ? "show" : ""}`}
               id="navbar_1"
               tabIndex="-1"
             >
@@ -112,7 +112,7 @@ const Navbar = ({
                     className="nav-link "
                     to="/"
                     onClick={() => {
-                      setSearchText('');
+                      setSearchText("");
                       closeMenu();
                     }}
                   >
@@ -130,7 +130,7 @@ const Navbar = ({
                   >
                     Category
                     <span>
-                      {' '}
+                      {" "}
                       <i className="fas fa-chevron-right chevron-right-arrow" />
                     </span>
                   </Link>
@@ -191,7 +191,7 @@ const Navbar = ({
                     className="nav-link "
                     to="/user/wishlist"
                     onClick={() => {
-                      setSearchText('');
+                      setSearchText("");
                       closeMenu();
                     }}
                   >
@@ -203,7 +203,7 @@ const Navbar = ({
                     className="nav-link "
                     to="/contact-us"
                     onClick={() => {
-                      setSearchText('');
+                      setSearchText("");
                       closeMenu();
                     }}
                   >
@@ -211,7 +211,7 @@ const Navbar = ({
                   </Link>
                 </li>
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     className="nav-link "
                     to="/about-us"
@@ -222,7 +222,7 @@ const Navbar = ({
                   >
                     About
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -230,7 +230,7 @@ const Navbar = ({
       </div>
       <div className="min-hed">
         <div className="container">
-          <div className="head-section" style={{ margin: 'auto' }}>
+          <div className="head-section" style={{ margin: "auto" }}>
             {/* <div className=" col-md-3  col-sm-0 " /> */}
             <div className="col-md-6 col-sm-6">
               <div action="" className="inputcontainer">
@@ -247,7 +247,7 @@ const Navbar = ({
             </div>
             <div className="col-md-3 col-sm-6 ml-3 custom-width ">
               <div className="login-section">
-                {!currentUser && !localStorage.getItem('auth_token') ? (
+                {!currentUser && !localStorage.getItem("auth_token") ? (
                   <>
                     <a>
                       <p
@@ -274,13 +274,13 @@ const Navbar = ({
                   <Link
                     to="/user/profile"
                     onClick={() => {
-                      setSearchText('');
+                      setSearchText("");
                     }}
                   >
                     <p
                       className="login-cart"
                       style={{
-                        margin: '0 15px',
+                        margin: "0 15px",
                         // borderRadius: '50%',
                         // width: 10,
                       }}
@@ -295,7 +295,7 @@ const Navbar = ({
                 <Link
                   to="/user/cart"
                   onClick={() => {
-                    setSearchText('');
+                    setSearchText("");
                   }}
                 >
                   <p className="shoping-cart ">

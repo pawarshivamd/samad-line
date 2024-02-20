@@ -47,8 +47,11 @@ function UserProfile({
   return (
     <>
       <div>
-        <div className="container-xxl ">
-          <div className="profile-section">
+        <div className="container-xxl">
+          <div
+            className="profile-section"
+            style={{ minHeight: "calc(100vh - 115px)" }}
+          >
             <div className="row">
               <div
                 className="col-lg-2 col-md-4 p-0 order-lg-1 order-2 order-md-1"
@@ -96,7 +99,7 @@ function UserProfile({
                       </p>
                     </Link>
                   </div>
-                  <div className="d-flex py-2">
+                  {/* <div className="d-flex py-2">
                     <Link to="/about-us" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">
                         <iconify-icon
@@ -108,7 +111,7 @@ function UserProfile({
                         About Us
                       </p>
                     </Link>
-                  </div>
+                  </div> */}
                   <div className="d-flex py-2">
                     <Link to="/contact-us" className="d-flex ">
                       <label htmlFor="Wishlist" className="p-1">

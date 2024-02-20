@@ -6,23 +6,23 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import ReactImageMagnify from 'react-image-magnify';
-import { Navigation } from 'swiper';
-import { Link, useNavigate } from 'react-router-dom';
-import ProductReviewsAndDes from './ProductReviewsAndDes';
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ReactImageMagnify from "react-image-magnify";
+import { Navigation } from "swiper";
+import { Link, useNavigate } from "react-router-dom";
+import ProductReviewsAndDes from "./ProductReviewsAndDes";
 
 const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
   const history = useNavigate();
-  const [activeImage, setActiveImage] = useState('');
+  const [activeImage, setActiveImage] = useState("");
 
   const [swiperImages, setSwiperImages] = useState([]);
   // const [qty, setQty] = useState(1);
   const [qty] = useState(1);
 
   const [wishList, setWishlist] = useState(
-    selectedProduct ? selectedProduct.inWishlist : false,
+    selectedProduct ? selectedProduct.inWishlist : false
   );
 
   const [isMobile, setIsMobile] = useState(false);
@@ -42,14 +42,14 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
     }
   };
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
   }, []);
 
   useEffect(() => {
     if (selectedProduct && selectedProduct.images) {
       setActiveImage(
-        selectedProduct.images.find((img) => img?.url !== '')?.url,
+        selectedProduct.images.find((img) => img?.url !== "")?.url
       );
       setSwiperImages(selectedProduct.images.filter((img) => img?.url));
     }
@@ -58,14 +58,14 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-1">
+          <span style={{ display: "none" }}>.</span>
         </div>
         <div className="col-lg-9">
           <section className="xzoom_part">
             <div
               className="container "
-              style={{ backgroundColor: '#FFF', borderRadius: '6px' }}
+              style={{ backgroundColor: "#FFF", borderRadius: "6px" }}
             >
               <div className="xzoom-section">
                 <div className="row">
@@ -74,11 +74,11 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                       <div className="xzoom-heart xzoom-heart-hide">
                         <p className="false-seal">
                           <svg
-                            className={wishList ? 'activeHeart' : 'heart'}
+                            className={wishList ? "activeHeart" : "heart"}
                             onClick={() => {
                               addToWishlist(
                                 selectedProduct && selectedProduct._id,
-                                wishList,
+                                wishList
                               );
                               setWishlist(!wishList);
                             }}
@@ -107,7 +107,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                           //   position: 'relative',
                           // }}
                           style={{
-                            width: 'calc(100% - 40px)',
+                            width: "calc(100% - 40px)",
                             // margin: '60px auto',
                           }}
                         >
@@ -116,7 +116,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                             style={{ zIndex: 9 }}
                             {...{
                               smallImage: {
-                                alt: 'none',
+                                alt: "none",
                                 isFluidWidth: true,
                                 src: activeImage,
                               },
@@ -140,10 +140,10 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                                 isTablet
                                   ? 4
                                   : isMobile
-                                  ? 3
-                                  : swiperImages.length === 5
-                                  ? 3
-                                  : swiperImages.length
+                                    ? 3
+                                    : swiperImages.length === 5
+                                      ? 3
+                                      : swiperImages.length
                               }
                             >
                               {swiperImages.map(
@@ -162,7 +162,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                                         xpreview={url}
                                       />
                                     </SwiperSlide>
-                                  ),
+                                  )
                               )}
                             </Swiper>
                             {/* <div className="swiper-button-next"></div>
@@ -176,15 +176,15 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                     <div className="xzoom-heart heart-hide-responsive">
                       <p className="false-seal ">
                         <svg
-                          className={wishList ? 'activeHeart' : 'heart'}
+                          className={wishList ? "activeHeart" : "heart"}
                           viewBox="0 0 24 22"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          style={{ cursor: 'pointer' }}
+                          style={{ cursor: "pointer" }}
                           onClick={() => {
                             addToWishlist(
                               selectedProduct && selectedProduct._id,
-                              wishList,
+                              wishList
                             );
                             setWishlist(!wishList);
                           }}
@@ -200,21 +200,21 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                     </div>
                     <div className="xzoom_details">
                       <h4>
-                        {selectedProduct && selectedProduct.name}{' '}
+                        {selectedProduct && selectedProduct.name}{" "}
                         <span>
-                          {' '}
+                          {" "}
                           {selectedProduct && selectedProduct.flavour && (
                             <iconify-icon
                               icon="mdi:lacto-vegetarian"
                               className="veg-nonveg-icon"
                               style={
                                 selectedProduct && selectedProduct.nonVeg
-                                  ? { color: 'red' }
-                                  : { color: 'green' }
+                                  ? { color: "red" }
+                                  : { color: "green" }
                               }
                             />
                           )}
-                        </span>{' '}
+                        </span>{" "}
                       </h4>
 
                       <h6>{selectedProduct && selectedProduct.brand}</h6>
@@ -225,8 +225,8 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                       <h3>
                         {selectedProduct && selectedProduct.price
                           ? selectedProduct.price
-                          : selectedProduct?.mrp}{' '}
-                        ${' '}
+                          : selectedProduct?.mrp}{" "}
+                        ${" "}
                         {selectedProduct?.price ? (
                           <span>
                             MRP:
@@ -235,7 +235,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                             </del>
                           </span>
                         ) : (
-                          ''
+                          ""
                         )}
                       </h3>
                       <p>
@@ -243,17 +243,17 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                           {selectedProduct?.price ? (
                             <span
                               className=" discount-text"
-                              style={{ color: 'green' }}
+                              style={{ color: "green" }}
                             >
                               {Math.floor(
                                 ((selectedProduct.mrp - selectedProduct.price) /
                                   selectedProduct.mrp) *
-                                  100,
+                                  100
                               )}
                               % OFF
                             </span>
                           ) : (
-                            ''
+                            ""
                           )}
                         </a>
                       </p>
@@ -336,11 +336,11 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                               isTablet
                                 ? 3
                                 : isMobile
-                                ? 3
-                                : selectedProduct &&
-                                  selectedProduct.images.length < 5
-                                ? selectedProduct.images.length / 2
-                                : 4
+                                  ? 3
+                                  : selectedProduct &&
+                                      selectedProduct.images.length < 5
+                                    ? selectedProduct.images.length / 2
+                                    : 4
                             }
                             spaceBetween={30}
                             navigation
@@ -359,7 +359,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                                     </div>
                                   </Link>
                                 </SwiperSlide>
-                              ),
+                              )
                             )}
                           </Swiper>
                         )}
@@ -377,19 +377,19 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                         <div className="btn-xzone-body ">
                           {selectedProduct?.stock !== 0 ? (
                             <a
-                              style={{ cursor: 'pointer' }}
+                              style={{ cursor: "pointer" }}
                               onClick={() =>
                                 addtoCart(
                                   {
                                     _id: selectedProduct && selectedProduct._id,
                                     qty,
                                   },
-                                  history,
+                                  history
                                 )
                               }
                             >
                               <p className="btn-xzone">
-                                {' '}
+                                {" "}
                                 <i className="bi bi-cart2" />
                                 <span> Add To Cart</span>
                               </p>
@@ -397,7 +397,7 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                           ) : (
                             <a
                               style={{
-                                cursor: 'pointer',
+                                cursor: "pointer",
                               }}
                               className="disabled-link"
                               //
@@ -415,10 +415,10 @@ const ProductDetailsMain = ({ selectedProduct, addtoCart, addToWishlist }) => {
                                 // className="btn btn-secondary"
                                 style={{
                                   // backgroundColor: 'grey',
-                                  color: 'red',
+                                  color: "red",
                                 }}
                               >
-                                <i style={{ color: 'red' }} />
+                                <i style={{ color: "red" }} />
                                 <span> Out of Stock</span>
                               </p>
                             </a>

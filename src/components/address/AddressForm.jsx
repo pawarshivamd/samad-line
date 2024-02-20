@@ -2,21 +2,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import classNames from 'classnames';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import classNames from "classnames";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const countryCode = process.env.REACT_APP_COUNTRY_CODE || '+961';
+const countryCode = process.env.REACT_APP_COUNTRY_CODE || "+961";
 
 const AddressForm = ({ address, setAddress, saveAddress }) => {
   const history = useNavigate();
-  const reg = new RegExp('^[0-9]{0,10}$');
+  const reg = new RegExp("^[0-9]{0,10}$");
   const { shippingAddress, billingAddress, addressType, _id } = address;
   const [setAsAbove, setsetAsAbove] = useState(true);
 
   const changeDetails = (type, key, value) => {
     if (setAsAbove) {
-      if (type === 'shippingAddress')
+      if (type === "shippingAddress")
         setAddress((oldVal) => {
           return {
             ...oldVal,
@@ -66,8 +66,8 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9 ' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-1">
+          <span style={{ display: "none" }}>.</span>
         </div>
         <div className="col-lg-9">
           <div className="Checkout-section">
@@ -104,7 +104,7 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                   addressType,
                                   _id,
                                 },
-                                history,
+                                history
                               );
                             }
                           }}
@@ -119,9 +119,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 value={shippingAddress.firstName}
                                 onChange={(e) =>
                                   changeDetails(
-                                    'shippingAddress',
-                                    'firstName',
-                                    e.target.value,
+                                    "shippingAddress",
+                                    "firstName",
+                                    e.target.value
                                   )
                                 }
                               />
@@ -135,9 +135,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 value={shippingAddress?.lastName}
                                 onChange={(e) =>
                                   changeDetails(
-                                    'shippingAddress',
-                                    'lastName',
-                                    e.target.value,
+                                    "shippingAddress",
+                                    "lastName",
+                                    e.target.value
                                   )
                                 }
                               />
@@ -152,12 +152,12 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 value={shippingAddress.addressLine1}
                                 onChange={(e) =>
                                   changeDetails(
-                                    'shippingAddress',
-                                    'addressLine1',
-                                    e.target.value,
+                                    "shippingAddress",
+                                    "addressLine1",
+                                    e.target.value
                                   )
                                 }
-                              />{' '}
+                              />{" "}
                               {/* <br /> */}
                             </div>
                             <div className="col-lg-6 col-md-12 col-sm-12">
@@ -170,12 +170,12 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 value={shippingAddress.addressLine2}
                                 onChange={(e) =>
                                   changeDetails(
-                                    'shippingAddress',
-                                    'addressLine2',
-                                    e.target.value,
+                                    "shippingAddress",
+                                    "addressLine2",
+                                    e.target.value
                                   )
                                 }
-                              />{' '}
+                              />{" "}
                               <br />
                             </div>
 
@@ -188,9 +188,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 value={shippingAddress.city}
                                 onChange={(e) =>
                                   changeDetails(
-                                    'shippingAddress',
-                                    'city',
-                                    e.target.value,
+                                    "shippingAddress",
+                                    "city",
+                                    e.target.value
                                   )
                                 }
                               />
@@ -260,13 +260,13 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 onChange={(e) => {
                                   const input = e.target.value;
                                   const numericPart = input.slice(
-                                    countryCode.length,
+                                    countryCode.length
                                   );
                                   if (reg.test(numericPart)) {
                                     changeDetails(
-                                      'shippingAddress',
-                                      'phoneNo',
-                                      `${countryCode}${numericPart}`,
+                                      "shippingAddress",
+                                      "phoneNo",
+                                      `${countryCode}${numericPart}`
                                     );
                                   }
                                 }}
@@ -275,7 +275,7 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
 
                             <button
                               type="submit"
-                              style={{ display: 'none' }}
+                              style={{ display: "none" }}
                               id="shipping_btn"
                             />
                             <div className="address-types-body">
@@ -328,58 +328,57 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 type="button"
                                 value="Home"
                                 className={classNames(
-                                  'address-btn ',
-                                  addressType === 'home' && 'activeAddressType',
+                                  "address-btn ",
+                                  addressType === "home" && "activeAddressType"
                                 )}
                                 style={{
                                   height: 35.5,
 
                                   borderRadius: 0,
                                 }}
-                                onClick={() => changeAddressType('home')}
+                                onClick={() => changeAddressType("home")}
                               />
 
                               <input
                                 type="button"
                                 value="Office"
                                 className={classNames(
-                                  'address-btn  ',
-                                  addressType === 'office' &&
-                                    'activeAddressType',
+                                  "address-btn  ",
+                                  addressType === "office" &&
+                                    "activeAddressType"
                                 )}
                                 style={{
-                                  margin: '0 10px',
+                                  margin: "0 10px",
                                   height: 35.5,
 
                                   borderRadius: 0,
                                 }}
-                                onClick={() => changeAddressType('office')}
+                                onClick={() => changeAddressType("office")}
                               />
 
                               <input
                                 type="button"
                                 value="Other"
                                 className={classNames(
-                                  'address-btn ',
-                                  addressType === 'other' &&
-                                    'activeAddressType',
+                                  "address-btn ",
+                                  addressType === "other" && "activeAddressType"
                                 )}
                                 style={{
                                   height: 35.5,
 
                                   borderRadius: 0,
                                 }}
-                                onClick={() => changeAddressType('other')}
+                                onClick={() => changeAddressType("other")}
                               />
                             </div>
                             <div className="d-flex  my-3">
                               <input
-                                style={{ cursor: 'pointer' }}
+                                style={{ cursor: "pointer" }}
                                 value="Save & Continue"
                                 className="shipping-btn"
                                 onClick={() => {
                                   const btn =
-                                    document.getElementById('shipping_btn');
+                                    document.getElementById("shipping_btn");
                                   btn.click();
                                 }}
                               />
@@ -391,7 +390,7 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                   </div>
                   <div
                     className="col-lg-6 col-md-12 col-sm-12"
-                    style={{ display: 'none' }}
+                    style={{ display: "none" }}
                   >
                     <div className="billing-body">
                       <div className=" d-flex justify-content-between">
@@ -405,14 +404,14 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                                 id="same as"
                                 value="same as"
                                 style={{
-                                  cursor: 'pointer',
+                                  cursor: "pointer",
                                   marginRight: 5,
-                                  accentColor: '#F9DF23',
+                                  accentColor: "#F9DF23",
                                 }}
                                 checked={setAsAbove}
                                 onClick={() => setBillingAsShipping()}
                               />
-                              <label for="same as">Same As Shipping</label>{' '}
+                              <label for="same as">Same As Shipping</label>{" "}
                             </p>
                           </form>
                         </div>
@@ -428,9 +427,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             value={billingAddress.firstName}
                             onChange={(e) =>
                               changeDetails(
-                                'billingAddress',
-                                'firstName',
-                                e.target.value,
+                                "billingAddress",
+                                "firstName",
+                                e.target.value
                               )
                             }
                           />
@@ -442,9 +441,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             value={billingAddress?.lastName}
                             onChange={(e) =>
                               changeDetails(
-                                'billingAddress',
-                                'lastName',
-                                e.target.value,
+                                "billingAddress",
+                                "lastName",
+                                e.target.value
                               )
                             }
                           />
@@ -457,9 +456,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                           value={billingAddress.addressLine1}
                           onChange={(e) =>
                             changeDetails(
-                              'billingAddress',
-                              'addressLine1',
-                              e.target.value,
+                              "billingAddress",
+                              "addressLine1",
+                              e.target.value
                             )
                           }
                         />
@@ -472,9 +471,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                           value={billingAddress.addressLine2}
                           onChange={(e) =>
                             changeDetails(
-                              'billingAddress',
-                              'addressLine2',
-                              e.target.value,
+                              "billingAddress",
+                              "addressLine2",
+                              e.target.value
                             )
                           }
                         />
@@ -487,9 +486,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                           value={billingAddress.city}
                           onChange={(e) =>
                             changeDetails(
-                              'billingAddress',
-                              'city',
-                              e.target.value,
+                              "billingAddress",
+                              "city",
+                              e.target.value
                             )
                           }
                         />
@@ -504,9 +503,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             onChange={(e) => {
                               if (e.target.value.length < 7) {
                                 changeDetails(
-                                  'billingAddress',
-                                  'pinCode',
-                                  e.target.value,
+                                  "billingAddress",
+                                  "pinCode",
+                                  e.target.value
                                 );
                               }
                             }}
@@ -521,9 +520,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             value={billingAddress.state}
                             onChange={(e) =>
                               changeDetails(
-                                'billingAddress',
-                                'state',
-                                e.target.value,
+                                "billingAddress",
+                                "state",
+                                e.target.value
                               )
                             }
                           />
@@ -538,9 +537,9 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             value={billingAddress.country}
                             onChange={(e) =>
                               changeDetails(
-                                'billingAddress',
-                                'country',
-                                e.target.value,
+                                "billingAddress",
+                                "country",
+                                e.target.value
                               )
                             }
                           />
@@ -556,13 +555,13 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                             onChange={(e) => {
                               const input = e.target.value;
                               const numericPart = input.slice(
-                                countryCode.length,
+                                countryCode.length
                               );
                               if (reg.test(numericPart)) {
                                 changeDetails(
-                                  'billingAddress',
-                                  'phoneNo',
-                                  `${countryCode}${numericPart}`,
+                                  "billingAddress",
+                                  "phoneNo",
+                                  `${countryCode}${numericPart}`
                                 );
                               }
                             }}
@@ -617,44 +616,44 @@ const AddressForm = ({ address, setAddress, saveAddress }) => {
                           type="button"
                           value="Home"
                           className={classNames(
-                            'shipping-btn  btn-views-active',
-                            addressType === 'home' && 'btn-views-active',
+                            "shipping-btn  btn-views-active",
+                            addressType === "home" && "btn-views-active"
                           )}
                           style={{
                             height: 35.5,
-                            padding: '0 30px',
+                            padding: "0 30px",
                             borderRadius: 0,
                           }}
-                          onClick={() => changeAddressType('home')}
+                          onClick={() => changeAddressType("home")}
                         />
                         <input
                           type="button"
                           value="Office"
                           className={classNames(
-                            'shipping-btn  btn-views-active',
-                            addressType === 'office' && 'btn-views-active',
+                            "shipping-btn  btn-views-active",
+                            addressType === "office" && "btn-views-active"
                           )}
                           style={{
-                            margin: '0 10px',
+                            margin: "0 10px",
                             height: 35.5,
-                            padding: '0 30px',
+                            padding: "0 30px",
                             borderRadius: 0,
                           }}
-                          onClick={() => changeAddressType('office')}
+                          onClick={() => changeAddressType("office")}
                         />
                         <input
                           type="button"
                           value="Other"
                           className={classNames(
-                            'shipping-btn  btn-views-active',
-                            addressType === 'other' && 'btn-views-active',
+                            "shipping-btn  btn-views-active",
+                            addressType === "other" && "btn-views-active"
                           )}
                           style={{
                             height: 35.5,
-                            padding: '0 30px',
+                            padding: "0 30px",
                             borderRadius: 0,
                           }}
-                          onClick={() => changeAddressType('other')}
+                          onClick={() => changeAddressType("other")}
                         />
                         <div className="d-flex justify-content-end my-3">
                           {/* <input

@@ -155,7 +155,7 @@ const Footer = () => {
               className="icon-footer-box mt-2 "
               target="_blank"
               rel="noreferrer"
-              href="#"
+              href="https://api.whatsapp.com/send?phone=96170000113"
             >
               Whatsapp <i className="fab fa-whatsapp" />
             </a>

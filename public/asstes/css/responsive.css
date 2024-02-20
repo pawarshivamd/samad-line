@@ -178,6 +178,8 @@
   /* =================== /banner end ==================  */
   .cat-round .carte-body {
     padding: 0px !important;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .cat-round .carte-body .carte-contain {
@@ -629,9 +631,6 @@
   }
 
   .cart-section .my-cart-contain .my-cart-img-box {
-    padding: 10px !important;
-    height: 135px !important;
-    width: 135px !important;
     margin: 8px !important;
   }
 
@@ -1089,6 +1088,13 @@
 }
 
 @media (max-width: 767px) {
+.cat-round .carte-body .carte-item:first-child{
+  display: none;
+}
+.cat-round .carte-body .carte-item:last-child {
+  display: none;
+}
+
   .navbar-nav .dropdown-menu {
     left: 100px;
   }

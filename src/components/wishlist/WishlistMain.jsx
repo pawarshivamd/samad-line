@@ -4,23 +4,23 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import EmptyWishList from 'components/notFound/EmptyWishList';
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import EmptyWishList from "components/notFound/EmptyWishList";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const WishlistMain = ({ wishlist, removeFromWishList, addtoCart }) => {
   const history = useNavigate();
   return (
     <div className="container-xxl">
       <div className="row">
-        <div className="col-lg-2" style={{ borderRight: '1px solid #E9E9E9 ' }}>
-          <span style={{ display: 'none' }}>.</span>
+        <div className="col-lg-1">
+          <span style={{ display: "none" }}>.</span>
         </div>
         {Boolean(wishlist.length) ? (
           <div className="col-lg-8">
             <div
               className="my-whish-section"
-              style={{ minHeight: 'calc(100vh - 115px)' }}
+              style={{ minHeight: "calc(100vh - 115px)" }}
             >
               <div className="container">
                 <div className="my-whish-head">
@@ -40,7 +40,7 @@ const WishlistMain = ({ wishlist, removeFromWishList, addtoCart }) => {
                             <Link to={`/product/${wish._id}`}>
                               <img
                                 src={
-                                  wish.images.find((img) => img?.url !== '')
+                                  wish.images.find((img) => img?.url !== "")
                                     ?.url
                                 }
                                 alt=""
@@ -51,7 +51,7 @@ const WishlistMain = ({ wishlist, removeFromWishList, addtoCart }) => {
                         <div className="col-lg-7 col-md-7 col-sm-12">
                           <div className="my-wish-list">
                             <a>
-                              {' '}
+                              {" "}
                               <Link
                                 to={`/product/${wish._id}`}
                                 className="col-lg-9 col-md-8 col-sm-12"
@@ -84,7 +84,7 @@ const WishlistMain = ({ wishlist, removeFromWishList, addtoCart }) => {
                                   MRP :<del className="ms-1">{wish.mrp}$</del>
                                 </span>
                               ) : (
-                                ''
+                                ""
                               )}
                             </h3>
                             <p className="star">
@@ -108,14 +108,14 @@ const WishlistMain = ({ wishlist, removeFromWishList, addtoCart }) => {
                             <div className="">
                               <div className="btn-mywish-body">
                                 <a
-                                  style={{ display: 'flex' }}
+                                  style={{ display: "flex" }}
                                   onClick={() =>
                                     addtoCart(
                                       {
                                         _id: wish._id,
                                         qty: 1,
                                       },
-                                      history,
+                                      history
                                     )
                                   }
                                 >
